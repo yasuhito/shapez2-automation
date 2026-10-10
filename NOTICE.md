@@ -15,3 +15,8 @@ Official API examples and Shapez Shifter were read as reference material:
 
 Their source and dependencies are not included, built, installed, or redistributed
 by this repository. No Shifter hooks or downloaded runtime packages are required.
+
+The MIT License in LICENSE applies only to this project's independently written
+source and documentation. It does not license the game or any third-party software.
+The reference projects listed above carry their own MIT licenses, copyright
+(c) 2025 tobspr Games; their existing license files are preserved locally.

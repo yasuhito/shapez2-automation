@@ -2,6 +2,7 @@
 !/.gitignore
 !/README.md
 !/NOTICE.md
+!/LICENSE
 !/bridge/
 /bridge/*
 !/bridge/AutomationMod.cs

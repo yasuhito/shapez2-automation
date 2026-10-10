@@ -143,3 +143,7 @@ python3 client/bridge_client.py --ipc "$IPC" call --command-json '{"op":"start_n
 実機の生ログ・セーブ識別子・画像・絶対パス入りの証跡は公開リポジトリに含めません。
 公開用に要約した結果だけを`docs/verification.md`へ記載します。
 第三者コード・参照については[NOTICE.md](NOTICE.md)を参照してください。
+
+## ライセンス
+
+独自のソースと文書は[MIT License](LICENSE)です。ゲーム本体・ゲームDLL・アセット・セーブ・第三者ソフトウェアは対象外で、それぞれの権利とライセンスに従います。[NOTICE.md](NOTICE.md)も参照してください。
