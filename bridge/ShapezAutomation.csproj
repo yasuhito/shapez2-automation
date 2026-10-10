@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9</LangVersion>
+    <OutputPath>../artifacts/mod/</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GameManaged Condition="'$(GameManaged)' == ''">$(SPZ2_MANAGED)</GameManaged>
+  </PropertyGroup>
+  <Target Name="CheckGameManaged" BeforeTargets="ResolveReferences">
+    <Error Condition="'$(GameManaged)' == '' Or !Exists('$(GameManaged)/SPZGameAssembly.dll')" Text="Set SPZ2_MANAGED or -p:GameManaged to your legally installed shapez 2 Managed directory." />
+  </Target>
+  <ItemGroup>
+    <Reference Include="$(GameManaged)/Game*.dll;$(GameManaged)/SPZGameAssembly.dll;$(GameManaged)/Core.dll;$(GameManaged)/Unity.Core.dll;$(GameManaged)/Core.Localization.dll;$(GameManaged)/UnityEngine.CoreModule.dll;$(GameManaged)/UnityEngine.ScreenCaptureModule.dll;$(GameManaged)/Unity.Mathematics.dll;$(GameManaged)/Newtonsoft.Json.dll;$(GameManaged)/Unity.Collections.dll" Private="false" />
+    <None Update="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

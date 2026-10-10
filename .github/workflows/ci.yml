@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  source-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Check Python syntax
+        run: python -m py_compile client/*.py
+      - name: Test local protocol client
+        run: python -m unittest discover -s client -v
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - name: Build metadata utility without game files
+        run: dotnet build metadata-probe --nologo -p:NuGetAudit=false

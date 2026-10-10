@@ -1,0 +1,14 @@
+{
+  "Version": "0.1.0",
+  "Description": "Local structured-command test adapter; exact game DLL hashes guard placement",
+  "Author": "Local verification",
+  "SavedModVersionCompabilityRangeWithSelf": "*",
+  "GameVersionSupportRange": "*",
+  "AffectsSaveGames": false,
+  "DisablesAchievements": true,
+  "Conflicts": [],
+  "Assemblies": [
+    "ShapezAutomation.dll"
+  ],
+  "Dependencies": []
+}
